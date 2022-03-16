@@ -2,7 +2,7 @@
 
 
 # import libraries
-
+import matplotlib.pyplot as plt
 
 
 
@@ -15,7 +15,8 @@ def import_data(pth):
     output:
             df: pandas dataframe
     '''	
-	pass
+    df = pd.read_csv(pth)
+    return df
 
 
 def perform_eda(df):
@@ -27,7 +28,11 @@ def perform_eda(df):
     output:
             None
     '''
-	pass
+    df.info()
+    df.describe()
+    df.plot()
+    #path to where the images will be saved
+    plt.savefig('~/Documents/output.png')
 
 
 def encoder_helper(df, category_lst, response):
